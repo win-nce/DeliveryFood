@@ -1,5 +1,6 @@
 import { FaStar } from "react-icons/fa6";
 import { Link } from "react-router"
+import type { RestaurantType } from "../../defaults/restaurant.data";
 
 export const ListsItem = ({ category, id, image, price, rating, time, title }:Props) => {
     return <li>
@@ -45,12 +46,4 @@ export const ListsItem = ({ category, id, image, price, rating, time, title }:Pr
     </li>
 }
 
-interface Props {
-    id: number;
-    image: string;
-    title: string;
-    time: number;
-    rating: number;
-    price: string;
-    category: number;
-}
+interface Props extends RestaurantType {}

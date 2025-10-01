@@ -10,7 +10,7 @@ export const Header = () => {
         <Container>
             <div className="flex items-center justify-between">
                 <Link to={"/"} className="inline-block w-[100px]">
-                <img src={ Logo } alt="Логотип"/>
+                    <img src={Logo} alt="Логотип" />
                 </Link>
                 <div className="space-x-2">
                     <Button color="blue">
@@ -21,15 +21,17 @@ export const Header = () => {
                         </span>
                     </ Button>
 
-                    <Button color="white">
-                        <BsCart3 />
+                    <Link to={"/cart"}>
+                        <Button color="white">
+                            <BsCart3 />
 
-                        <span>
-                            Корзина
-                        </span>
-                    </ Button>
+                            <span>
+                                Корзина
+                            </span>
+                        </ Button>
+                    </Link>
                 </div>
-                
+
             </div>
         </ Container>
 

@@ -1,9 +1,23 @@
 import { RiShoppingCart2Line } from "react-icons/ri";
 import { Button } from "../../../components/button";
 import { toMoney } from "../../../lib/util";
+import { useCart } from "react-use-cart";
 
 
-export const ListItem = ({ description, image, price, title }: Props) => {
+export const ListItem = ({ description, image, price, title, id }: Props) => {
+    const { addItem } = useCart()
+    
+    const onAdd = () => {
+        addItem({
+            id: id.toString(),
+            name: title,
+            price,
+            quantity: 1,
+            image,
+            description
+        })
+    }
+
     return <li>
         <div className="bg-white overflow-hidden rounded-[7px]">
             {/* image */}
@@ -21,7 +35,8 @@ export const ListItem = ({ description, image, price, title }: Props) => {
                 </p>
 
                 <div className="flex gap-[30px] items-center">
-                    <Button color="blue">
+                    <Button color="blue" onClick={onAdd}>
+
                         <span>
                             В корзинку
                         </span>
@@ -43,4 +58,6 @@ interface Props {
     title: string;
     description: string;
     price: number;
+    id: number;
+
 }

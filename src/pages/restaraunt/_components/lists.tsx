@@ -13,7 +13,7 @@ export const Lists = () => {
     return <Container>
         <ul className="grid grid-cols-3 gap-[24px] pt-6 pb-[112px]">
         {
-            filtered.map(item => <ListItem key={item.id} description={item.description} image={item.image} price={item.price} title={item.name}/>)
+            filtered.map(item => <ListItem key={item.id} description={item.description} image={item.image} price={item.price} title={item.name} id={item.id}/>)
         }
     </ul>
     </Container>

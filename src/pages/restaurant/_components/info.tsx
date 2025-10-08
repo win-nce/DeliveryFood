@@ -12,7 +12,7 @@ export const Info = () => {
     );
 
     if (!restaurant?.id) {
-        return <p>404 - Рестаран не найден!</p>
+        return <p>404 - Ресторан не найдено!</p>
     }
 
     return <Container>
@@ -21,16 +21,17 @@ export const Info = () => {
                 {restaurant.title} | Ресторан
             </title>
         </Helmet>
+
         <div className="flex gap-[30px] items-center">
             <h2 className="font-bold text-[36px]">
-                {restaurant?.title}
+                {restaurant.title}
             </h2>
 
             {/* description */}
 
             <div className="flex gap-2.5 items-center">
                 <span>
-                    От {toMoney(restaurant.price)} 
+                    От {toMoney(restaurant.price)}
                 </span>
 
                 <span>

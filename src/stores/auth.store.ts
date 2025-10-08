@@ -1,18 +1,18 @@
-import { create } from "zustand"
-
-
+import { create } from "zustand";
 
 const useAuth = create<AuthTypes>((set) => {
-    return{
+    return {
         user: {
             email: "",
             password: "",
         },
+
         handleLogin(values) {
             return set(() => ({
                 user: values
             }))
         },
+
         handleLogout() {
             return set(() => ({
                 user: {
@@ -20,13 +20,13 @@ const useAuth = create<AuthTypes>((set) => {
                     password: ""
                 }
             }))
-        }
+        },
     }
 });
 
 interface AuthTypes {
     user: User;
-    handleLogin: (value: User) => void;
+    handleLogin: (values: User) => void;
     handleLogout: () => void;
 }
 
@@ -35,4 +35,4 @@ interface User {
     password: string
 }
 
-export {useAuth, type User, type AuthTypes}
+export { useAuth, type User, type AuthTypes }

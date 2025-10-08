@@ -6,9 +6,7 @@ export const CartPage = () => {
         <Helmet>
             <title>Корзина</title>
         </Helmet>
-
-        <ProductList>
-            
-        </ProductList>
+        
+        <ProductList />
     </div>
 }

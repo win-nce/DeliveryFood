@@ -1,8 +1,7 @@
-
 import { createBrowserRouter } from "react-router";
-import App from "./app/App";
-import { Homepage } from "./pages/home/page";
-import { RestaurantPage } from "./pages/restaraunt/page";
+import { App } from "./App";
+import { HomePage } from "./pages/home/page";
+import { RestaurantPage } from "./pages/restaurant/page";
 import { NotFoundPage } from "./not-found";
 import { CartPage } from "./pages/cart/page";
 import { LoginPage } from "./pages/login/page";
@@ -13,23 +12,23 @@ export const router = createBrowserRouter([
         Component: App,
         children: [
             {
-                path: "/",
-                Component: Homepage
+                path: "/DeliveryFood",
+                Component: HomePage
             },
             {
-                path: "/restaurant/:id",
+                path: "DeliveryFood/restaurant/:id",
                 Component: RestaurantPage
             },
             {
-                path: "*", //"*" указывает все пути что не перечислены. в нашем случае 404 page.
+                path: "*",
                 Component: NotFoundPage
             },
             {
-                path: "/cart",
+                path: "DeliveryFood/cart",
                 Component: CartPage
             },
             {
-                path: "login",
+                path: "DeliveryFood/login",
                 Component: LoginPage
             }
         ],

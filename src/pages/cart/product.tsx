@@ -11,13 +11,13 @@ export const Product = ({
     const Inc = () => {
         updateItemQuantity(id.toString(), quantity + 1)
     }
-    const Dec = () => {
+
+    const Dic = () => {
         updateItemQuantity(id.toString(), quantity - 1)
     }
 
-    const totalPrice = getItem(id.toString())?.price*getItem(id.toString())?.quantity;
-
-    
+    const totalPrice = getItem(id.toString())?.price *
+        getItem(id.toString())?.quantity;
 
     return <li>
         <div className="flex items-center gap-10" >
@@ -33,22 +33,24 @@ export const Product = ({
                 <h3 className="text-lg font-extrabold">
                     {name}
                 </h3>
+
                 <p className="text-base font-light">
                     {description}
                 </p>
-                <div className="flexx gap-2 items-center">
+
+                <div className="flex gap-2 items-center">
                     <Button onClick={Inc} color="white">
                         +
                     </Button>
 
                     <big>{toMoney(price)}</big>
 
-                    <Button onClick={Dec} color="white">
+                    <Button onClick={Dic} color="white">
                         -
                     </Button>
 
                     <p>
-                        Итого: { totalPrice }
+                        Итого: {totalPrice}
                     </p>
                 </div>
             </div>
